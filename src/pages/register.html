@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/auth.css" />
+    <title>Cadastre-se | Kenzie Empresas</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__logoContainer">
+        <img src="../assets/circle.svg" alt="circle" />
+        <img src="../assets/logo.svg" alt="logo" />
+      </div>
+
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__listItem--first">
+            <a href="../../index.html">Home</a>
+          </li>
+          <li class="header__listItem--second">
+            <a href="./login.html">Login</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__modalWrapper">
+        <button class="header__modalBtn">
+          <img src="../assets/burger.svg" alt="modalBtn" />
+        </button>
+
+        <dialog class="header__dialog">
+          <nav class="header__nav--modal">
+            <ul class="header__list">
+              <li class="header__listItem--first">
+                <a href="../../index.html">Home</a>
+              </li>
+              <li class="header__listItem--second">
+                <a href="./login.html">Login</a>
+              </li>
+            </ul>
+          </nav>
+        </dialog>
+      </div>
+    </header>
+
+    <main class="main">
+      <section>
+        <div class="main__container">
+          <h2 class="main__title">Cadastre-se</h2>
+
+          <form class="main__form">
+            <input type="text" class="main__input" placeholder="Seu Nome" />
+            <input type="text" class="main__input" placeholder="Seu e-mail" />
+            <input
+              type="password"
+              class="main__input"
+              placeholder="Sua senha"
+            />
+            <select name="" id="" class="main__select">
+              <option selected="selected" class="main__option" disabled>
+                Nível profissional
+              </option>
+              <option value="jr" class="main__option">Junior</option>
+              <option value="pl" class="main__option">Pleno</option>
+              <option value="sr" class="main__option">Senior</option>
+            </select>
+            <input
+              type="submit"
+              class="main__input--submit"
+              value="Cadastre-se"
+            />
+          </form>
+
+          <div class="main__redirect">
+            <a href="./login.html" class="main__redirectBtn">Retornar</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

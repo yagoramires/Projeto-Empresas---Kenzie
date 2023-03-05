@@ -1,0 +1,125 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main__section--bg {
+    display: none;
+}
+
+.main__background {}
+
+.main__section {
+    width: 100%;
+}
+
+.main__container {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.main__filterBtn {
+    width: 100%;
+    background: #4200FF;
+    padding: .5rem 1rem;
+    border: none;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.main__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    overflow: auto;
+    max-width: 100%;
+}
+
+.main__card {
+    min-width: 240px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    border-bottom: 1px solid #4200FF;
+}
+
+.main__cardTitle {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 4.5rem;
+}
+
+.main__cardText {
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+}
+
+.main__cardBtn {
+    font-size: 16px;
+    line-height: 19px;
+    color: #4200FF;
+    border: 1px solid #4200FF;
+    border-radius: 255px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+    .main {
+        align-items: flex-start;
+    }
+
+    .main__container {
+        padding-top: 0;
+    }
+
+    .main__section--bg {
+        display: flex;
+        max-width: 550px;
+    }
+
+    .main__background {
+        max-width: 550px;
+        min-height: 750px;
+        object-fit: cover;
+    }
+
+    .main__card {
+        min-width: 490px;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+        border-bottom: 1px solid #4200FF;
+    }
+
+    .main__cardTitle {
+        margin-bottom: 1rem;
+    }
+
+
+    .main__list {
+        flex-direction: column;
+    }
+
+}
