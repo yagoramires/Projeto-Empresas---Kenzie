@@ -41,13 +41,14 @@
     list-style-type: none;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 2rem;
     overflow: auto;
     max-width: 100%;
 }
 
 .main__card {
+    height: 210px;
     min-width: 240px;
     padding: 1rem;
     display: flex;
@@ -61,7 +62,7 @@
 .main__cardTitle {
     font-size: 20px;
     line-height: 24px;
-    margin-bottom: 4.5rem;
+
 }
 
 .main__cardText {
@@ -70,7 +71,7 @@
     color: var(--black);
 }
 
-.main__cardBtn {
+.main__cardSector {
     font-size: 16px;
     line-height: 19px;
     color: var(--blue);

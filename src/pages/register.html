@@ -52,20 +52,37 @@
           <h2 class="main__title">Cadastre-se</h2>
 
           <form class="main__form">
-            <input type="text" class="main__input" placeholder="Seu Nome" />
-            <input type="text" class="main__input" placeholder="Seu e-mail" />
+            <input
+              type="text"
+              class="main__input"
+              placeholder="Seu Nome"
+              id="name"
+            />
+            <input
+              type="text"
+              class="main__input"
+              placeholder="Seu e-mail"
+              id="email"
+            />
             <input
               type="password"
               class="main__input"
               placeholder="Sua senha"
+              id="password"
             />
-            <select name="" id="" class="main__select">
-              <option selected="selected" class="main__option" disabled>
+            <select name="" class="main__select" id="level">
+              <option
+                value="select"
+                selected="selected"
+                class="main__option"
+                disabled
+              >
                 Nível profissional
               </option>
-              <option value="jr" class="main__option">Junior</option>
-              <option value="pl" class="main__option">Pleno</option>
-              <option value="sr" class="main__option">Senior</option>
+              <option value="estágio" class="main__option">Estagiário</option>
+              <option value="júnior" class="main__option">Junior</option>
+              <option value="pleno" class="main__option">Pleno</option>
+              <option value="sênior" class="main__option">Senior</option>
             </select>
             <input
               type="submit"
@@ -80,5 +97,7 @@
         </div>
       </section>
     </main>
+
+    <script src="../scripts/register.js"></script>
   </body>
 </html>
