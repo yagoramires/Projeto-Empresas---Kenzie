@@ -1,48 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/globalStyles.css" />
-    <title>Admin | Kenzie Empresas</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__logoContainer">
-        <img src="../assets/circle.svg" alt="circle" />
-        <img src="../assets/logo.svg" alt="logo" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/globalStyles.css" />
+  <link rel="stylesheet" href="../styles/admin.css" />
+  <title>Admin | Kenzie Empresas</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__logoContainer">
+      <img src="../assets/circle.svg" alt="circle" />
+      <img src="../assets/logo.svg" alt="logo" />
+    </div>
+
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li class="header__listItem--first">
+          <button class="header__logoutBtn">Logout</button>
+        </li>
+    </nav>
+
+    <div class="header__modalWrapper">
+      <button class="header__modalBtn">
+        <img src="../assets/burger.svg" alt="modalBtn" />
+      </button>
+
+      <dialog class="header__dialog">
+        <nav class="header__nav--modal">
+          <ul class="header__list">
+            <button class="header__logoutBtn">Logout</button>
+
+        </nav>
+      </dialog>
+    </div>
+  </header>
+
+  <main>
+    <section class="company">
+      <div class="company__titleContainer">
+        <h2 class="company__title">Departamentos</h2>
+        <div>
+          <select name="" id="" class="company__select">
+            <option selected="selected" disabled>Selecionar empresa</option>
+            <option value="" class="company__option">opt 1</option>
+            <option value="" class="company__option">opt 2</option>
+            <option value="" class="company__option">opt 3</option>
+          </select>
+          <button class="company__addBtn">
+            <img src="../assets/add.svg" alt="add">
+            Criar</button>
+        </div>
       </div>
-
-      <nav class="header__nav">
-        <ul class="header__list">
-          <li class="header__listItem--first">
-            <a href="../../index.html">Home</a>
-          </li>
-          <li class="header__listItem--second">
-            <a href="./register.html">Cadastro</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="header__modalWrapper">
-        <button class="header__modalBtn">
-          <img src="../assets/burger.svg" alt="modalBtn" />
-        </button>
-
-        <dialog class="header__dialog">
-          <nav class="header__nav--modal">
-            <ul class="header__list">
-              <li class="header__listItem--first">
-                <a href="../../index.html">Home</a>
-              </li>
-              <li class="header__listItem--second">
-                <a href="./register.html">Cadastro</a>
-              </li>
-            </ul>
-          </nav>
-        </dialog>
+      <div class="company__cardContainer">
+        <div class="company__card">
+          <h3 class="company__department">Department Name</h3>
+          <p class="company__data">Department Description</p>
+          <p class="company__data">Company Name</p>
+          <div class="company__btnContainer">
+            <button class="company__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="company__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+            <button class="company__btn">
+              <img src="../assets/trash.svg" alt="delete">
+            </button>
+          </div>
+        </div>
+        <div class="company__card">
+          <h3 class="company__department">Department Name</h3>
+          <p class="company__data">Department Description</p>
+          <p class="company__data">Company Name</p>
+          <div class="company__btnContainer">
+            <button class="company__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="company__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+            <button class="company__btn">
+              <img src="../assets/trash.svg" alt="delete">
+            </button>
+          </div>
+        </div>
+        <div class="company__card">
+          <h3 class="company__department">Department Name</h3>
+          <p class="company__data">Department Description</p>
+          <p class="company__data">Company Name</p>
+          <div class="company__btnContainer">
+            <button class="company__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="company__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+            <button class="company__btn">
+              <img src="../assets/trash.svg" alt="delete">
+            </button>
+          </div>
+        </div>
       </div>
-    </header>
-  </body>
+    </section>
+    
+    <section class="companyUsers">
+      <h2 class="companyUsers__title">Usuários cadastrados</h2>
+      <div class="companyUsers__cardContainer">
+        <div class="companyUsers__card">
+          <h3 class="companyUsers__username">Username</h3>
+          <p class="companyUsers__data">Pleno</p>
+          <p class="companyUsers__data">Company Name</p>
+          <div class="companyUsers__btnContainer">
+            <button class="companyUsers__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="companyUsers__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+          </div>
+        </div>
+        <div class="companyUsers__card">
+          <h3 class="companyUsers__username">Username</h3>
+          <p class="companyUsers__data">Pleno</p>
+          <p class="companyUsers__data">Company Name</p>
+          <div class="companyUsers__btnContainer">
+            <button class="companyUsers__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="companyUsers__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+          </div>
+        </div>
+        <div class="companyUsers__card">
+          <h3 class="companyUsers__username">Username</h3>
+          <p class="companyUsers__data">Pleno</p>
+          <p class="companyUsers__data">Company Name</p>
+          <div class="companyUsers__btnContainer">
+            <button class="companyUsers__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="companyUsers__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+          </div>
+        </div>
+        <div class="companyUsers__card">
+          <h3 class="companyUsers__username">Username</h3>
+          <p class="companyUsers__data">Pleno</p>
+          <p class="companyUsers__data">Company Name</p>
+          <div class="companyUsers__btnContainer">
+            <button class="companyUsers__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="companyUsers__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+          </div>
+        </div>
+        <div class="companyUsers__card">
+          <h3 class="companyUsers__username">Username</h3>
+          <p class="companyUsers__data">Pleno</p>
+          <p class="companyUsers__data">Company Name</p>
+          <div class="companyUsers__btnContainer">
+            <button class="companyUsers__btn">
+              <img src="../assets//view.svg" alt="view">
+            </button>
+            <button class="companyUsers__btn">
+              <img src="../assets/edit-black.svg" alt="edit">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+</body>
+
 </html>

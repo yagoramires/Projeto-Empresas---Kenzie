@@ -12,8 +12,6 @@
     display: none;
 }
 
-.main__background {}
-
 .main__section {
     width: 100%;
 }
@@ -29,13 +27,13 @@
 
 .main__filterBtn {
     width: 100%;
-    background: #4200FF;
+    background: var(--blue);
     padding: .5rem 1rem;
     border: none;
     font-size: 18px;
     line-height: 27px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--white);
     cursor: pointer;
 }
 
@@ -57,7 +55,7 @@
     justify-content: center;
     align-items: start;
     gap: 1rem;
-    border-bottom: 1px solid #4200FF;
+    border-bottom: 1px solid var(--blue);
 }
 
 .main__cardTitle {
@@ -69,14 +67,14 @@
 .main__cardText {
     font-size: 16px;
     line-height: 19px;
-    color: #000000;
+    color: var(--black);
 }
 
 .main__cardBtn {
     font-size: 16px;
     line-height: 19px;
-    color: #4200FF;
-    border: 1px solid #4200FF;
+    color: var(--blue);
+    border: 1px solid var(--blue);
     border-radius: 255px;
     padding: .5rem 1rem;
     cursor: pointer;
@@ -110,7 +108,7 @@
         justify-content: center;
         align-items: start;
         gap: 1rem;
-        border-bottom: 1px solid #4200FF;
+        border-bottom: 1px solid var(--blue);
     }
 
     .main__cardTitle {

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/profile.css" />
     <title>Profile | Kenzie Empresas</title>
   </head>
   <body>
@@ -17,12 +18,8 @@
       <nav class="header__nav">
         <ul class="header__list">
           <li class="header__listItem--first">
-            <a href="../../index.html">Home</a>
+            <button class="header__logoutBtn">Logout</button>
           </li>
-          <li class="header__listItem--second">
-            <a href="./register.html">Cadastro</a>
-          </li>
-        </ul>
       </nav>
 
       <div class="header__modalWrapper">
@@ -33,16 +30,69 @@
         <dialog class="header__dialog">
           <nav class="header__nav--modal">
             <ul class="header__list">
-              <li class="header__listItem--first">
-                <a href="../../index.html">Home</a>
-              </li>
-              <li class="header__listItem--second">
-                <a href="./register.html">Cadastro</a>
-              </li>
-            </ul>
+              <button class="header__logoutBtn">Logout</button>
+
           </nav>
         </dialog>
       </div>
     </header>
+
+      <main>
+        <section>
+          <div class="userData">
+            <h2  class="userData__username">USERNAME</h2>
+            <div>
+            <div  class="userData__infoContainer">
+              <p  class="userData___userContent">Email: meuemail@mail.com</p>
+              <p  class="userData___userContent">Pleno</p>
+              <p  class="userData___userContent">Home Office</p>
+            </div>
+            <button  class="userData__btn">
+              <img src="../assets/edit-purple.svg" alt="edit">
+            </button>
+            </div>
+          </div>
+          <div class="companyData">
+            <div class="companyData">
+              <h2 class="companyData__title">Company Name - Department Name</h2>
+            </div>
+            <div class="companyData__employees">
+              <div class="companyData__card">
+                <p class="companyData__employeeName">Nome do colega</p>
+                <p class="companyData__employeeLevel">Senior</p>
+              </div>
+              <div class="companyData__card">
+                <p class="companyData__employeeName">Nome do colega</p>
+                <p class="companyData__employeeLevel">Senior</p>
+              </div>
+              <div class="companyData__card">
+                <p class="companyData__employeeName">Nome do colega</p>
+                <p class="companyData__employeeLevel">Senior</p>
+              </div>
+              <div class="companyData__card">
+                <p class="companyData__employeeName">Nome do colega</p>
+                <p class="companyData__employeeLevel">Senior</p>
+              </div>
+            </div>
+          </div>
+
+          <dialog class="modal__wrapper hidden">
+            <dialog class="modal__container">
+            <div >
+              <button class="modal__closeBtn">
+                <img src="../assets/closeBtn.svg" alt="close">
+              </button>
+              <h2 class="modal__title">Editar Perfil</h2>
+              <form class="modal__form">
+                <input type="text" placeholder="Seu nome" class="modal__input">
+                <input type="email"placeholder="Seu e-mail" class="modal__input">
+                <input type="password" placeholder="Sua senha"class="modal__input">
+                <input type="submit" value="Editar Perfil" class="modal__input--submit">
+              </form>
+            </div>
+          </dialog>
+        </section>
+      </main>
+
   </body>
 </html>

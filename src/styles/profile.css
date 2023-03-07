@@ -1,0 +1,195 @@
+main {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 95%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+.userData {
+    min-width: 100%;
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.userData__username {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: var(--black);
+}
+
+.userData>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.userData__infoContainer {
+    width: 100%;
+}
+
+.userData___userContent {
+    font-weight: 400;
+    color: var(--black);
+}
+
+.userData__btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.companyData {
+    background-color: var(--gray);
+}
+
+.companyData__title {
+    width: 100%;
+    text-align: center;
+    background: var(--blue);
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 39px;
+    color: var(--white);
+}
+
+.companyData__employees {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+}
+
+.companyData__card {
+    width: 100%;
+    padding: .8rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--blue);
+}
+
+.companyData__employeeName {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--black);
+}
+
+.companyData__employeeLevel {
+    font-size: 15px;
+    line-height: 18px;
+    color: var(--black);
+}
+
+.modal__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+
+    background: rgba(70, 35, 167, 0.13);
+}
+
+.modal__container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    padding: 3rem 1rem;
+    background: var(--white);
+}
+
+.modal__closeBtn {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.modal__title {
+    font-size: 40px;
+    line-height: 60px;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.modal__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal__input {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+.modal__input--submit {
+    width: 100%;
+    background: var(--blue);
+    padding: 1rem;
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media (min-width: 1024px) {
+    .userData__infoContainer {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .companyData__title {
+        font-size: 2rem;
+    }
+
+    .companyData__employees {
+        padding: 4rem 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 2.4rem;
+    }
+
+    .companyData__card {
+        max-width: 18rem;
+    }
+
+}
