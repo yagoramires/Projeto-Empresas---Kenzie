@@ -64,11 +64,14 @@ const handleUsers = async () => {
   users.map((user) => {
     usersList.appendChild(createUserCard(user));
   });
+
+  handleUserBtns();
 };
 
 const createUserCard = (user) => {
   const card = document.createElement('div');
   card.classList.add('companyUsers__card');
+  card.id = user.uuid;
 
   const username = document.createElement('h3');
   username.classList.add('companyUsers__username');
@@ -84,22 +87,125 @@ const createUserCard = (user) => {
 
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('companyUsers__btnContainer');
-  const btnView = document.createElement('button');
-  btnView.classList.add('companyUsers__btn');
-  const imgView = document.createElement('img');
-  imgView.src = '../assets/view.svg';
-  btnView.appendChild(imgView);
+  const btnDelete = document.createElement('button');
+  btnDelete.classList.add('companyUsers__btn');
+  btnDelete.id = 'delete';
+  const imgDel = document.createElement('img');
+  imgDel.src = '../assets/trash.svg';
+  btnDelete.appendChild(imgDel);
   const btnEdit = document.createElement('button');
   btnEdit.classList.add('companyUsers__btn');
+  btnEdit.id = 'edit';
 
   const imgEdit = document.createElement('img');
-  imgEdit.src = '../assets/edit-black.svg';
+  imgEdit.src = '../assets/edit-purple.svg';
   btnEdit.appendChild(imgEdit);
-  buttonContainer.append(btnView, btnEdit);
+  buttonContainer.append(btnEdit, btnDelete);
 
   card.append(username, level, company, buttonContainer);
 
   return card;
+};
+
+const handleUserBtns = () => {
+  const btnDelete = document.querySelectorAll('#delete');
+  const btnEdit = document.querySelectorAll('#edit');
+
+  btnEdit.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.parentNode.parentNode.id;
+      handleDialogEditUser();
+      handleEditUserSubmit(id);
+    });
+  });
+
+  btnDelete.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.parentNode.parentNode.id;
+      handleDialogDeletetUser();
+      handleDeleteUserSubmit(id);
+    });
+  });
+};
+
+const handleDialogEditUser = () => {
+  const modal = document.querySelector('.modal__editUser');
+  const closeModal = document.querySelector('.modal__closeEditUser');
+
+  modal.showModal();
+  closeModal.addEventListener('click', () => {
+    modal.close();
+  });
+};
+
+const handleDialogDeletetUser = () => {
+  const modal = document.querySelector('.modal__deleteUser');
+  const closeModal = document.querySelector('.modal__closeDeleteUser');
+
+  modal.showModal();
+  closeModal.addEventListener('click', () => {
+    modal.close();
+  });
+};
+
+const handleDeleteUserSubmit = (id) => {
+  const deleteBtn = document.querySelector('.modal__deleteUserBtn');
+
+  deleteBtn.addEventListener('click', () => {
+    deleteUser(id);
+  });
+};
+
+const handleEditUserSubmit = (id) => {
+  const formEdit = document.querySelector('.modal__editUserForm');
+  const workType = document.querySelector('#type');
+  const professionalLevel = document.querySelector('#level');
+
+  formEdit.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const userData = {
+      kind_of_work: workType.value,
+      professional_level: professionalLevel.value,
+    };
+
+    editUser(userData, id);
+  });
+};
+
+const editUser = async (userData, id) => {
+  const options = {
+    method: 'PATCH',
+    headers: {
+      authorization: `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  };
+
+  const req = await fetch(URL + '/admin/update_user/' + id, options);
+
+  if (req.status === 200) {
+    handleUsers();
+    const modal = document.querySelector('.modal__editUser');
+    modal.close();
+  }
+};
+
+const deleteUser = async (id) => {
+  const options = {
+    method: 'DELETE',
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  };
+
+  const req = await fetch(URL + '/admin/delete_user/' + id, options);
+
+  if (req.status === 204) {
+    handleUsers();
+    const modal = document.querySelector('.modal__deleteUser');
+    modal.close();
+  }
 };
 
 const handleDepartments = async () => {
@@ -107,8 +213,6 @@ const handleDepartments = async () => {
 
   // departmentList.innerHTML = '';
   const departments = await loadDepartments();
-
-  console.log(departments);
 
   departments.map((department) => {
     departmentList.appendChild(createDepartmentCard(department));

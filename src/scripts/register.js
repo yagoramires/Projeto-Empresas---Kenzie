@@ -18,7 +18,7 @@ registerForm.addEventListener('submit', (e) => {
   const password = passwordInput.value;
   const level = levelSelect.options[levelSelect.selectedIndex].value;
 
-  if (!name || !email || !password || level === 'select') {
+  if (!name || !email || !password) {
     console.log('erro');
     return;
   }
@@ -27,18 +27,33 @@ registerForm.addEventListener('submit', (e) => {
 });
 
 const createUser = async (name, email, password, level) => {
-  const options = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      username: name,
-      password,
-      email: email.toLowerCase(),
-      professional_level: level,
-    }),
-  };
+  let options;
+  if (level === '') {
+    options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: name,
+        password,
+        email: email.toLowerCase(),
+      }),
+    };
+  } else {
+    options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: name,
+        password,
+        email: email.toLowerCase(),
+        professional_level: level,
+      }),
+    };
+  }
 
   const req = await fetch(URL + '/auth/register', options);
   await req.json();
