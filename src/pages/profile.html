@@ -31,7 +31,7 @@
           <nav class="header__nav--modal">
             <ul class="header__list">
               <button class="header__logoutBtn">Logout</button>
-
+              </ul>
           </nav>
         </dialog>
       </div>
@@ -40,12 +40,12 @@
       <main>
         <section>
           <div class="userData">
-            <h2  class="userData__username">USERNAME</h2>
+            <h2  class="userData__username" id="username"></h2>
             <div>
             <div  class="userData__infoContainer">
-              <p  class="userData___userContent">Email: meuemail@mail.com</p>
-              <p  class="userData___userContent">Pleno</p>
-              <p  class="userData___userContent">Home Office</p>
+              <p  class="userData___userContent" id="email"></p>
+              <p  class="userData___userContent" id="professional_level"></p>
+              <p  class="userData___userContent" id="kind_of_work"></p>
             </div>
             <button  class="userData__btn">
               <img src="../assets/edit-purple.svg" alt="edit">
@@ -94,5 +94,6 @@
         </section>
       </main>
 
+      <script type='module' src="../scripts/profile.js"></script>
   </body>
 </html>

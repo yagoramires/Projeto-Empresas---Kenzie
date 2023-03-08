@@ -1,3 +1,7 @@
+import { handleModal } from './header.js';
+
+handleModal();
+
 const URL = 'http://localhost:6278';
 
 const registerForm = document.querySelector('.main__form');
@@ -33,9 +37,12 @@ const loginUser = async (email, password) => {
   const req = await fetch(URL + '/auth/login', options);
   const res = await req.json();
 
+  console.log(req);
+  console.log(res);
+
   if (req.status === 200) {
     localStorage.setItem('token', res.token);
-    window.location.href = 'http://127.0.0.1:5500/src/pages/profile.html';
+    window.location.href = 'http://localhost:5500/src/pages/profile.html';
   }
   return;
 };

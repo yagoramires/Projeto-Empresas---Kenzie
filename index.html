@@ -35,7 +35,7 @@
           <nav class="header__nav--modal">
             <ul class="header__list">
               <li class="header__listItem--first">
-                <a href="./src/pages/index.html">Login</a>
+                <a href="./src/pages/login.html">Login</a>
               </li>
               <li class="header__listItem--second">
                 <a href="./src/pages/register.html">Cadastro</a>
@@ -56,11 +56,15 @@
       </section>
       <section class="main__section">
         <div class="main__container">
-          <button class="main__filterBtn">Selecionar Setor</button>
+          <select class="main__filterBtn">
+            <option value="select" selected="selected" class="main__option">
+              Selecionar Setor
+            </option>
+          </select>
           <ul class="main__list"></ul>
         </div>
       </section>
     </main>
-    <script src="./src/scripts/index.js"></script>
+    <script type="module" src="./src/scripts/index.js"></script>
   </body>
 </html>

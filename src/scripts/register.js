@@ -1,3 +1,7 @@
+import { handleModal } from './header.js';
+
+handleModal();
+
 const URL = 'http://localhost:6278';
 
 const registerForm = document.querySelector('.main__form');
@@ -38,4 +42,8 @@ const createUser = async (name, email, password, level) => {
 
   const req = await fetch(URL + '/auth/register', options);
   await req.json();
+
+  if (req.status === 200) {
+    window.location.href = 'http://localhost:5500/src/pages/login.html';
+  }
 };

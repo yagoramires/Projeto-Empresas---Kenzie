@@ -28,6 +28,7 @@ section {
     font-size: 30px;
     line-height: 36px;
     color: var(--black);
+    text-transform: capitalize;
 }
 
 .userData>div {
@@ -45,6 +46,12 @@ section {
     font-weight: 400;
     color: var(--black);
 }
+
+.userData___userContent:nth-of-type(2),
+.userData___userContent:nth-of-type(3) {
+    text-transform: capitalize;
+}
+
 
 .userData__btn {
     border: none;
