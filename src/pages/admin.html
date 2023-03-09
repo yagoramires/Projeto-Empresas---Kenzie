@@ -47,10 +47,6 @@
         <h2 class="company__title">Departamentos</h2>
         <div>
           <select name="" id="" class="company__select">
-            <option selected="selected" disabled>Selecionar empresa</option>
-            <option value="" class="company__option">opt 1</option>
-            <option value="" class="company__option">opt 2</option>
-            <option value="" class="company__option">opt 3</option>
           </select>
           <button class="company__addBtn">
             <img src="../assets/add.svg" alt="add">
@@ -67,67 +63,78 @@
   </main>
 
   <dialog class="modal__viewDepartment">
-    <div>
-      <div>
+    <div class="viewDepartment">
+      <div class="modal__close">
+        <img src="../assets/closeBtn.svg" alt="">
+      </div>
+      <div class="viewDepartment__header">
+        <h2 class="viewDepartment__departmentName">Nome do departamento</h2>
         <div>
-          <h3>Descrição do departamento</h3>
-          <p>Empresa pertencente</p>
-        </div>
-        <div>
-          <select name="" id=""></select>
-          <button></button>
+          <div>
+            <h3 class="viewDepartment__description">Descrição do departamento</h3>
+            <p class="viewDepartment__company">Empresa pertencente</p>
+          </div>
+          <form class="viewDepartment__form">
+            <select class="viewDepartment__selectUsers">
+            </select>
+            <input type="submit" value="Contratar" class="viewDepartment__hire"/>
+          </form>
         </div>
       </div>
-      <div>
-        <div>
-          <h3>Username</h3>
-          <p>Pleno</p> 
-          <p>Company Name</p>
-          <button>Desligar</button>
-        </div>
+      <div class="viewDepartment__users">
       </div>
     </div>
   </dialog>
 
   <dialog class="modal__createDepartment">
-    <div>
-      <h2>Criar Departamento</h2>
-      <form>
-        <input type="text" placeholder="Nome do departamento">
-        <input type="text" placeholder="Descrição">
-        <select>
+    <div class="createDepartment">
+      <h2 class="createDepartment__title">Criar Departamento</h2>
+      <div class="modal__close">
+        <img src="../assets/closeBtn.svg" alt="">
+      </div>
+      <form class="createDepartment__form">
+        <input type="text" placeholder="Nome do departamento" class="createDepartment__input" id="departmentName">
+        <input type="text" placeholder="Descrição" class="createDepartment__input" id="departmentDescription">
+        <!-- <select class="createDepartment__select">
           <option value="">Selecionar empresa</option>
-        </select>
+        </select> -->
+        <input type="submit" value="Criar o departamento" class="createDepartment__input--submit">
       </form>
     </div>
   </dialog>
 
   <dialog class="modal__editDepartment">
-    <div>
-      <h2>Criar Departamento</h2>
-      <form>
-        <textarea cols="30" rows="10" placeholder="Valores anteriores da descrição"></textarea>
+    <div class="editDepartment">
+      <h2 class="editDepartment__title">Criar Departamento</h2>
+      <div class="modal__close">
+        <img src="../assets/closeBtn.svg" alt="">
+      </div>
+      <form class="editDepartment__form">
+        <textarea cols="30" rows="10" placeholder="Valores anteriores da descrição" class="editDepartment__textarea" id="editDepartmentDescription"></textarea>
+        <input type="submit" value="Salvar alterações" class="editDepartment__input--submit">
       </form>
-      <input type="submit" value="Salvar alterações">
     </div>
   </dialog>
 
   <dialog class="modal__deleteDepartment">
-    <div>
-      <h2>Realmente deseja deletar o Departamento e demitir seus funcionários?</h2>
-      <button>Confirmar</button>
+    <div class="deleteDepartment">
+      <h2 class="deleteDepartment__title"></h2>
+      <div class="modal__close">
+        <img src="../assets/closeBtn.svg" alt="">
+      </div>
+      <button class="deleteDepartment__button">Confirmar</button>
     </div>
   </dialog>
 
 
   <dialog class="modal__editUser">
-    <div>
-      <h2>Editar Usuário</h2>
-      <div class="modal__closeEditUser">
+    <div class="editUser">
+      <h2 class="editUser__title">Editar Usuário</h2>
+      <div class="modal__close">
         <img src="../assets/closeBtn.svg" alt="">
       </div>
       <form class="modal__editUserForm">
-        <select class="" id="type">
+        <select  id="type" class="editUser__select">
           <option value="" selected="selected" class="">
             Selecionar modalidade de trabalho 
           </option>
@@ -135,7 +142,7 @@
           <option value="hibrido" class="">Híbrido</option>
           <option value="home office" class="">Home Office</option>
         </select>
-        <select class="" id="level">
+        <select  id="level" class="editUser__select">
           <option value="" selected="selected" class="">
             Selecionar nível profissional
           </option>
@@ -145,17 +152,17 @@
           <option value="sênior" class="">Senior</option>
         </select>
 
-        <input type="submit" value="Editar" class="">
+        <input type="submit" value="Editar" class="editUser__input--submit">
       </form>
     </div>
   </dialog>
   
 <dialog class="modal__deleteUser">
-  <div>
+  <div class="deleteUser">
     <h2>
       Realmente deseja remover o usuário?
     </h2>
-    <div class="modal__closeDeleteUser">
+    <div class="modal__close">
       <img src="../assets/closeBtn.svg" alt="">
     </div>
 

@@ -53,40 +53,24 @@
             </div>
           </div>
           <div class="companyData">
-            <div class="companyData">
+            <div>
               <h2 class="companyData__title">Company Name - Department Name</h2>
             </div>
             <div class="companyData__employees">
-              <div class="companyData__card">
-                <p class="companyData__employeeName">Nome do colega</p>
-                <p class="companyData__employeeLevel">Senior</p>
-              </div>
-              <div class="companyData__card">
-                <p class="companyData__employeeName">Nome do colega</p>
-                <p class="companyData__employeeLevel">Senior</p>
-              </div>
-              <div class="companyData__card">
-                <p class="companyData__employeeName">Nome do colega</p>
-                <p class="companyData__employeeLevel">Senior</p>
-              </div>
-              <div class="companyData__card">
-                <p class="companyData__employeeName">Nome do colega</p>
-                <p class="companyData__employeeLevel">Senior</p>
-              </div>
+
             </div>
           </div>
 
-          <dialog class="modal__wrapper hidden">
-            <dialog class="modal__container">
-            <div >
+          <dialog class="modal__wrapper">
+            <div class="modal__container">
               <button class="modal__closeBtn">
                 <img src="../assets/closeBtn.svg" alt="close">
               </button>
               <h2 class="modal__title">Editar Perfil</h2>
               <form class="modal__form">
-                <input type="text" placeholder="Seu nome" class="modal__input">
-                <input type="email"placeholder="Seu e-mail" class="modal__input">
-                <input type="password" placeholder="Sua senha"class="modal__input">
+                <input type="text" placeholder="Seu nome" class="modal__input" id="formName"> 
+                <input type="email"placeholder="Seu e-mail" class="modal__input" id="formEmail">
+                <input type="password" placeholder="Sua senha"class="modal__input" id='formPassword'>
                 <input type="submit" value="Editar Perfil" class="modal__input--submit">
               </form>
             </div>
