@@ -26,16 +26,23 @@
 }
 
 .main__filterBtn {
+    outline: none;
     width: 100%;
     background: var(--blue);
-    padding: .5rem 1rem;
+    padding: .5rem 2rem;
     border: none;
     font-size: 18px;
     line-height: 27px;
-    text-align: center;
     color: var(--white);
     cursor: pointer;
 }
+
+.main__filterBtn option {
+    background-color: var(--white);
+    text-align: start;
+    color: black;
+}
+
 
 .main__list {
     list-style-type: none;

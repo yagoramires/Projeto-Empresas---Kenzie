@@ -124,8 +124,6 @@ const createEmployeeCard = (user) => {
 const handleEditModal = () => {
   const modal = document.querySelector('.modal__wrapper');
   modal.showModal();
-  // const closeModal = document.querySelector('.modal__closeBtn');
-  // closeModal.addEventListener('click', () => console.log('click'));
 
   const form = document.querySelector('.modal__form');
   form.addEventListener('submit', (e) => {
@@ -135,6 +133,18 @@ const handleEditModal = () => {
     const email = document.querySelector('#formEmail');
     const password = document.querySelector('#formPassword');
     updateUserProfile(name.value, email.value, password.value);
+  });
+
+  closeModal('modal__wrapper', 'closeEditProfile');
+};
+
+const closeModal = (modal, btn) => {
+  const dialog = document.querySelector(`.${modal}`);
+  const closeBtn = document.querySelector(`#${btn}`);
+
+  console.log(dialog);
+  closeBtn.addEventListener('click', () => {
+    dialog.close();
   });
 };
 

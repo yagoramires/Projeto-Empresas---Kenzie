@@ -12,10 +12,10 @@
 
 <body>
   <header class="header">
-    <div class="header__logoContainer">
+    <a href="http://localhost:5500/index.html" class="header__logoContainer">
       <img src="../assets/circle.svg" alt="circle" />
       <img src="../assets/logo.svg" alt="logo" />
-    </div>
+    </a>
 
     <nav class="header__nav">
       <ul class="header__list">
@@ -64,7 +64,7 @@
 
   <dialog class="modal__viewDepartment">
     <div class="viewDepartment">
-      <div class="modal__close">
+      <div class="modal__close" id="closeViewDepartment">
         <img src="../assets/closeBtn.svg" alt="">
       </div>
       <div class="viewDepartment__header">
@@ -89,7 +89,7 @@
   <dialog class="modal__createDepartment">
     <div class="createDepartment">
       <h2 class="createDepartment__title">Criar Departamento</h2>
-      <div class="modal__close">
+      <div class="modal__close" id="closeCreateDepartment">
         <img src="../assets/closeBtn.svg" alt="">
       </div>
       <form class="createDepartment__form">
@@ -104,7 +104,7 @@
   </dialog>
 
   <dialog class="modal__editDepartment">
-    <div class="editDepartment">
+    <div class="editDepartment" id="closeEditDepartment">
       <h2 class="editDepartment__title">Criar Departamento</h2>
       <div class="modal__close">
         <img src="../assets/closeBtn.svg" alt="">
@@ -119,7 +119,7 @@
   <dialog class="modal__deleteDepartment">
     <div class="deleteDepartment">
       <h2 class="deleteDepartment__title"></h2>
-      <div class="modal__close">
+      <div class="modal__close" id="closeDeleteDepartment">
         <img src="../assets/closeBtn.svg" alt="">
       </div>
       <button class="deleteDepartment__button">Confirmar</button>
@@ -130,7 +130,7 @@
   <dialog class="modal__editUser">
     <div class="editUser">
       <h2 class="editUser__title">Editar Usuário</h2>
-      <div class="modal__close">
+      <div class="modal__close" id="closeEditUser">
         <img src="../assets/closeBtn.svg" alt="">
       </div>
       <form class="modal__editUserForm">
@@ -162,7 +162,7 @@
     <h2>
       Realmente deseja remover o usuário?
     </h2>
-    <div class="modal__close">
+    <div class="modal__close" id="closeDeleteUser">
       <img src="../assets/closeBtn.svg" alt="">
     </div>
 

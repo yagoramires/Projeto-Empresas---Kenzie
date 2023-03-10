@@ -116,22 +116,16 @@ const handleUserBtns = () => {
 
 const handleDialogEditUser = () => {
   const modal = document.querySelector('.modal__editUser');
-  const closeModal = document.querySelector('.modal__close');
 
   modal.showModal();
-  closeModal.addEventListener('click', () => {
-    modal.close();
-  });
+  closeModal('modal__editUser', 'closeEditUser');
 };
 
 const handleDialogDeletetUser = () => {
   const modal = document.querySelector('.modal__deleteUser');
-  const closeModal = document.querySelector('.modal__close');
 
   modal.showModal();
-  closeModal.addEventListener('click', () => {
-    modal.close();
-  });
+  closeModal('modal__deleteUser', 'closeDeleteUser');
 };
 
 const handleDeleteUserSubmit = (id) => {
@@ -469,6 +463,7 @@ const handleDepartments = async (id) => {
   });
 
   departmentBtns();
+  closeModal('modal__createDepartment', 'closeCreateDepartment');
   return;
 };
 
@@ -508,13 +503,8 @@ const departmentBtns = () => {
 const loadDepartmentModal = async (id) => {
   const department = await loadDepartment(id);
   const select = document.querySelector('.viewDepartment__selectUsers');
-  const closeModal = document.querySelector('.modal__close');
+  closeModal('modal__viewDepartment', 'closeViewDepartment');
 
-  closeModal.addEventListener('click', () => {
-    const modal = document.querySelector('.modal__viewDepartment');
-
-    modal.close();
-  });
   select.innerHTML = '';
   department.users.forEach((user) => {
     const option = document.createElement('option');
@@ -593,6 +583,7 @@ const loadEditDepartmentModal = async (id) => {
     e.preventDefault();
     updateDepartmentDescription(textarea.value, id);
   });
+  closeModal('modal__editDepartment', 'closeEditDepartment');
 };
 
 const loadDeleteDepartmentModal = async (id) => {
@@ -603,6 +594,18 @@ const loadDeleteDepartmentModal = async (id) => {
   const deleteBtn = document.querySelector('.deleteDepartment__button');
   deleteBtn.addEventListener('click', () => {
     deleteDepartment(id);
+  });
+
+  closeModal('modal__deleteDepartment', 'closeDeleteDepartment');
+};
+
+const closeModal = (modal, btn) => {
+  const dialog = document.querySelector(`.${modal}`);
+  const closeBtn = document.querySelector(`#${btn}`);
+
+  console.log(dialog);
+  closeBtn.addEventListener('click', () => {
+    dialog.close();
   });
 };
 
