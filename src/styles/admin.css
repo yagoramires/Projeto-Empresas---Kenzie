@@ -69,6 +69,7 @@ main {
     font-weight: 400;
     font-size: 14px;
     color: var(--white);
+    cursor: pointer;
 }
 
 .company__cardContainer,
@@ -403,10 +404,6 @@ main {
         padding: 0 1rem;
     }
 
-    .company__addBtn {
-        font-weight: 700;
-        font-size: 18px;
-    }
 
     .company__cardContainer,
     .companyUsers__cardContainer {

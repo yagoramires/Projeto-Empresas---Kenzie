@@ -1,4 +1,5 @@
 import { handleModal } from './header.js';
+import { error } from './toast.js';
 
 handleModal();
 
@@ -56,9 +57,12 @@ const createUser = async (name, email, password, level) => {
   }
 
   const req = await fetch(URL + '/auth/register', options);
-  await req.json();
+  const res = await req.json();
+  console.log(res);
 
   if (req.status === 201) {
     window.location.href = 'http://localhost:5500/src/pages/login.html';
+  } else {
+    error(res.error[0]);
   }
 };

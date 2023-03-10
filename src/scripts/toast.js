@@ -1,10 +1,22 @@
 export const success = (message) => {
-  createToast(message, 'toast-success');
+  const body = document.querySelector('body');
+  body.appendChild(createToast(message, 'toast-success'));
+
+  setTimeout(() => {
+    const toast = document.querySelector('.toast-container');
+    body.removeChild(toast);
+  }, 3000);
   return;
 };
 
 export const error = (message) => {
-  createToast(message, 'toast-error');
+  const body = document.querySelector('body');
+  body.appendChild(createToast(message, 'toast-error'));
+
+  setTimeout(() => {
+    const toast = document.querySelector('.toast-container');
+    body.removeChild(toast);
+  }, 3000);
   return;
 };
 

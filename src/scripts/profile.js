@@ -1,4 +1,5 @@
 import { handleModal } from './header.js';
+import { success, error } from './toast.js';
 
 handleModal();
 
@@ -38,7 +39,6 @@ const fetchUserData = async () => {
 
   const req = await fetch(URL + '/users/profile', options);
   const res = await req.json();
-  console.log(res);
   return res;
 };
 
@@ -74,10 +74,14 @@ const updateUserProfile = async (username, email, password) => {
   };
 
   const req = await fetch(URL + '/users', options);
-  console.log(await req.json());
+  const res = await req.json();
 
   if (req.status === 200) {
-    window.location.reload();
+    success('Perfil editado com sucesso.', 'toast-success');
+    const userData = await fetchUserData();
+    setUserData(userData);
+  } else {
+    error(res.error, 'toast-error');
   }
 };
 
@@ -133,8 +137,8 @@ const handleEditModal = () => {
     const email = document.querySelector('#formEmail');
     const password = document.querySelector('#formPassword');
     updateUserProfile(name.value, email.value, password.value);
+    modal.close();
   });
-
   closeModal('modal__wrapper', 'closeEditProfile');
 };
 

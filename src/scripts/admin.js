@@ -1,4 +1,5 @@
 import { handleModal } from './header.js';
+import { success, error } from './toast.js';
 
 const URL = 'http://localhost:6278';
 const token = localStorage.getItem('token');
@@ -163,11 +164,16 @@ const editUser = async (userData, id) => {
   };
 
   const req = await fetch(URL + '/admin/update_user/' + id, options);
+  const res = await req.json();
 
   if (req.status === 200) {
     handleUsers();
     const modal = document.querySelector('.modal__editUser');
     modal.close();
+
+    success('Usuário alterado com sucesso!', 'toast-success');
+  } else {
+    error(res.error, 'toast-error');
   }
 };
 
@@ -185,6 +191,10 @@ const deleteUser = async (id) => {
     handleUsers();
     const modal = document.querySelector('.modal__deleteUser');
     modal.close();
+
+    success('Usuário deletado com sucesso!', 'toast-success');
+  } else {
+    error('Ocorreu um erro ao remover o usuário', 'toast-error');
   }
 };
 
@@ -281,7 +291,10 @@ const createDepartment = async (name, description, company_uuid) => {
 
   if (req.status === 201) {
     window.location.reload();
+  } else {
+    error('Ocorreu um erro ao editar o departamento', 'toast-error');
   }
+
   return;
 };
 
@@ -313,7 +326,10 @@ const deleteDepartment = async (id) => {
   const req = await fetch(URL + '/departments/' + id, options);
   if (req.status === 204) {
     window.location.reload();
+  } else {
+    error('Ocorreu um erro ao editar o departamento', 'toast-error');
   }
+
   return;
 };
 
@@ -523,10 +539,12 @@ const loadDepartmentModal = async (id) => {
   const departmentName = document.querySelector(
     '.viewDepartment__departmentName',
   );
+
   departmentName.innerHTML = department.name;
   const departmentDescription = document.querySelector(
     '.viewDepartment__description',
   );
+
   departmentDescription.innerHTML = department.description;
   const companyName = document.querySelector('.viewDepartment__company');
   companyName.innerHTML = department.companies.name;
@@ -583,6 +601,7 @@ const loadEditDepartmentModal = async (id) => {
     e.preventDefault();
     updateDepartmentDescription(textarea.value, id);
   });
+
   closeModal('modal__editDepartment', 'closeEditDepartment');
 };
 
@@ -603,7 +622,6 @@ const closeModal = (modal, btn) => {
   const dialog = document.querySelector(`.${modal}`);
   const closeBtn = document.querySelector(`#${btn}`);
 
-  console.log(dialog);
   closeBtn.addEventListener('click', () => {
     dialog.close();
   });

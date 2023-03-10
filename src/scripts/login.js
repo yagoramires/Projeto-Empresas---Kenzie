@@ -1,4 +1,5 @@
 import { handleModal } from './header.js';
+import { error } from './toast.js';
 
 handleModal();
 
@@ -37,12 +38,11 @@ const loginUser = async (email, password) => {
   const req = await fetch(URL + '/auth/login', options);
   const res = await req.json();
 
-  console.log(req);
-  console.log(res);
-
   if (req.status === 200) {
     localStorage.setItem('token', res.token);
     window.location.href = 'http://localhost:5500/src/pages/profile.html';
+  } else {
+    error(res.error, 'toast-error');
   }
   return;
 };
